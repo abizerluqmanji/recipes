@@ -1,4 +1,6 @@
 [
-  { "file": "chili.md", "title": "Simple Chili" },
-  { "file": "pancakes.md", "title": "Fluffy Pancakes" }
+  {
+    "file": "cubed-chicken.md",
+    "title": "Cubed Chicken"
+  }
 ]
