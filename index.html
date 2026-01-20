@@ -10,45 +10,27 @@
 </head>
 
 <body>
-    <h1>Recipes</h1>
-    <div id="list"><strong>Available recipes</strong>
-        <div id="recipes"></div>
-    </div>
-    <div id="content"><em>Select a recipe from the list.</em></div>
-
+    <header>
+        <h1>Ez Recipes</h1>
+    </header>
+    <main>
+        <div id="list"><strong>Available recipes</strong>
+            <div id="recipes"></div>
+        </div>
+        <div id="content"><em>Select a recipe from the list.</em></div>
+    </main>
+    <footer>
+        <p>
+            © 2026 Abizer Luqmanji
+            <a href="https://www.github.com/abizerluqmanji/recipes" class="icon-link" target="_blank" rel="noreferrer"
+                title="Source">
+                <img
+                    src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg">
+            </a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        async function loadIndex() {
-            const res = await fetch('recipes/index.json');
-            if (!res.ok) { document.getElementById('recipes').textContent = 'Could not load recipe index.'; return }
-            const list = await res.json();
-            const container = document.getElementById('recipes');
-            container.innerHTML = '';
-            list.forEach(item => {
-                const a = document.createElement('a');
-                a.href = '#';
-                a.className = 'recipe';
-                a.textContent = item.title || item.file;
-                a.onclick = (e) => { e.preventDefault(); loadRecipe(item.file); };
-                container.appendChild(a);
-            });
-        }
-
-        async function loadRecipe(file) {
-            const res = await fetch('recipes/' + file);
-            if (!res.ok) { document.getElementById('content').textContent = 'Could not load recipe.'; return }
-            const md = await res.text();
-            const html = marked.parse(md);
-            document.getElementById('content').innerHTML = html;
-            window.location.hash = file;
-        }
-
-        window.addEventListener('hashchange', () => { const f = location.hash.replace('#', ''); if (f) loadRecipe(f); });
-
-        loadIndex().then(() => {
-            const f = location.hash.replace('#', ''); if (f) loadRecipe(f);
-        });
-    </script>
 </body>
 
 </html>
