@@ -47,10 +47,6 @@ a.recipe:hover {
     transform: scale(1.1);
 }
 
-pre {
-    white-space: pre-wrap;
-}
-
 .icon-link {
     margin-left: 0.5rem;
     vertical-align: middle;
