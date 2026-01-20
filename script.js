@@ -1,7 +1,8 @@
 async function loadIndex() {
-    const res = await fetch('recipes/index.json');
+    const res = await fetch('recipes/index.yml');
     if (!res.ok) { document.getElementById('recipes').textContent = 'Could not load recipe index.'; return }
-    const list = await res.json();
+    const text = await res.text();
+    const list = jsyaml.load(text);
     const container = document.getElementById('recipes');
     container.innerHTML = '';
     list.forEach(item => {
