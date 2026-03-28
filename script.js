@@ -1,3 +1,9 @@
+function generateRecipeTitle(filename) {
+    // Remove file extension and split by dashes, then capitalize each word
+    const name = filename.replace(/\.[^/.]+$/, '');
+    return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 async function loadIndex() {
     const res = await fetch('recipes/index.yml');
     if (!res.ok) { document.getElementById('recipes').textContent = 'Could not load recipe index.'; return }
@@ -9,8 +15,8 @@ async function loadIndex() {
         const a = document.createElement('a');
         a.href = '#';
         a.className = 'recipe';
-        a.textContent = item.title || item.file;
-        a.onclick = (e) => { e.preventDefault(); loadRecipe(item.file); };
+        a.textContent = generateRecipeTitle(item);
+        a.onclick = (e) => { e.preventDefault(); loadRecipe(item); };
         container.appendChild(a);
     });
 }
