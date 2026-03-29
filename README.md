@@ -9,4 +9,5 @@ Webpage for easy to make recipes
 
 ## TODO
 
-Add annoyingly long AI-generated stories for each recipe
+- Add images for each recipe
+- Add long AI-generated stories for each recipe

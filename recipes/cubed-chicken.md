@@ -1,8 +1,8 @@
 # Cubed Chicken
 
-## Description
+**Author**: Abizer
 
-Cubed chicken to go with various dishes.
+Cubed chicken to go with various dishes.  
 2-4 servings (depending on size), 10 min prep time, 20 min cook time.
 
 ## Ingredients

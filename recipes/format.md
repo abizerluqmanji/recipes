@@ -1,8 +1,8 @@
-# Recipe Name
+# <recipe-name>
 
-## Description
+**Author**: <your-name>
 
-Short description of the recipe.
+Short description of the recipe.  
 Serving size, prep time, cook time, etc.
 
 ## Ingredients

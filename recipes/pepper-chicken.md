@@ -1,6 +1,6 @@
 # Pepper Chicken
 
-## Description
+**Author**: Anila
 
 Fun and easy pepper chicken to eat with rice or roti.  
 5 servings, 10 minute prep time, 25 minute cook time.
