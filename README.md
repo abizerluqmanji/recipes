@@ -4,8 +4,8 @@ Webpage for easy to make recipes
 
 ## Adding Recipes
 
-- Add a new recipe as a Markdown file under the `recipes/` directory. Use the `format.md` template as a guide.
-- Update `recipes/index.yml` to include the new recipe file.
+- Add a new recipe as a Markdown file under the `recipes/` directory. Use the template recipe in `template.md` as a guide.
+- Add your new recipe to `recipes/index.yml`.
 
 ## TODO
 
