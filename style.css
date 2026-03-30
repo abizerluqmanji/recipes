@@ -30,17 +30,25 @@ main {
 }
 
 .recipe-list {
-    max-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+#recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
 }
 
 a.recipe {
-    display: block;
-    padding: 6px 8px;
+    display: inline-block;
+    padding: 8px 12px;
     border: 1px solid #f0f6fc;
-    margin-bottom: 6px;
     text-decoration: none;
     color: #f0f6fc;
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 a.recipe:hover {
