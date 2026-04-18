@@ -22,13 +22,15 @@ Fun and easy pepper chicken to eat with rice or roti.
 - 1/2 cup Coriander Leaves
 - Lemon Juice, to taste
 - Salt, to taste
+- Water
 
 ## Directions
 
-1. Heat oil in a saucepan at medium-high. Once hot enough, add mustard seeds and wait until they crackle. Then add curry leaves and wait for the spatter to calm down.
-2. Add sliced onions to the pan with a little salt and let them sweat (3-5 mins). Once translucent, add the ginger-garlic paste and sautée. Once the raw smell disappears (2-4 mins), add the tomatoes.
+1. Marinate the chicken in salt and lemon juice.
+2. Heat oil in a saucepan at medium-high. Once hot enough, add mustard seeds and wait until they crackle. Then add curry leaves and wait for the spatter to calm down.
+3. Add sliced onions to the pan with a little salt and let them sweat (3-5 mins). Once the onions are translucent, add the ginger-garlic paste and sautée. Once the raw smell disappears (2-4 mins), add the tomatoes.
 3. Add all the powders to the dish and sautée for an additional two minutes. Adjust the heat so as to not burn anything.
 4. Add a lot of crushed pepper (at least 1 tbsp), and salt. Add lemon juice to desired tartness.
-5. Add the chicken, and boil it on a medium-low flame (10-15 minutes). Once the water evaporates, add more oil if required. 
+5. Add the chicken and two cups of water, and let it boil on a medium-low flame (10-15 minutes). If there's too little water, add more.
 6. Add more pepper. Taste check!
 7. Once desired consistency is reached, add coriander leaves. Cook for 1-2 minutes, then shut off the flame.
