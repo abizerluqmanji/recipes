@@ -29,7 +29,7 @@ Simple and perfect shrimp gravy to eat with rice or roti.
 
 1. Marinate the shrimp in lemon juice, salt and ginger-garlic paste for 30 minutes. 
 1. Heat a little bit of water in a pan, then boil the minced garlic and ginger with some salt until the water evaporates, about 3 minutes.
-1. Heat oil in the same pan; add mustard seeds after a minute, and wait for them to spatter. Once they do, add curry leaves. Sautée for 1-2 minutes.
+1. Heat oil in the same pan, on medium heat; add mustard seeds after a minute, and wait for them to spatter. Once they do, add curry leaves. Sautée for 1-2 minutes.
 1. Add the onions with a bit of salt. Wait for the onions to sweat and turn golden brown.
 1. Add the tomatoes and chilli powder and cook for 4-5 minutes on medium heat.
 1. Add a cup of water, cumin powder and garam masala and cook for an additional 5 minutes.
