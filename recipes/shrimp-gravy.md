@@ -35,4 +35,4 @@ Simple and perfect shrimp gravy to eat with rice or roti.
 1. Add a cup of water, cumin powder and garam masala and cook for an additional 5 minutes.
 1. Add the shrimp and lemon juice, mix well, cover the pan with a lid and cook for 4 minutes. Add water to desired consistency.
 1. Taste check!
-1. Shut off the flame, add coriander leaves, and serve.
+1. Shut off the heat, add coriander leaves, and serve.
