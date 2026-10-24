@@ -176,9 +176,15 @@ main {
     margin: 2rem 0 0.75rem;
 }
 
+.recipe-body ul,
+.recipe-body ol {
+    padding-left: 1.5rem;
+}
+
+.recipe-body ul li,
 .recipe-body ol li {
-    margin-bottom: 0.75rem;
-    padding-left: 4px;
+    margin-bottom: 0.5rem;
+    padding-left: 6px;
 }
 
 .recipe-body ul li::marker,
