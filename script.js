@@ -82,6 +82,57 @@ function renderList() {
     document.getElementById('recipe-view').hidden = true;
 }
 
+// Wrap each H2 and the content under it in an open <details> block
+function makeSectionsCollapsible(body) {
+    const sections = [];
+    body.querySelectorAll('h2').forEach(h2 => {
+        const details = el('details', 'section');
+        details.open = true;
+        const summary = el('summary');
+        const content = el('div', 'section-content');
+        h2.replaceWith(details);
+        summary.appendChild(h2);
+        details.append(summary, content);
+        while (details.nextSibling && details.nextSibling.nodeName !== 'H2') {
+            content.appendChild(details.nextSibling);
+        }
+        summary.addEventListener('click', e => {
+            e.preventDefault();
+            toggleSection(details, content);
+        });
+        sections.push({ title: h2.textContent, details, content });
+    });
+    return sections;
+}
+
+// Buttons rather than #anchors, since the hash is used for routing
+function jumpLinks(sections) {
+    const nav = el('nav', 'jump-links');
+    sections.forEach(({ title, details, content }) => {
+        const button = el('button', 'jump-link', title);
+        button.type = 'button';
+        button.onclick = () => {
+            if (!details.open) toggleSection(details, content);
+            details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        nav.appendChild(button);
+    });
+    return nav;
+}
+
+// Animate the content height, since <details> can't transition on its own
+function toggleSection(details, content) {
+    const opening = !details.open;
+    if (opening) details.open = true;
+    details.classList.toggle('collapsed', !opening);
+    const full = content.scrollHeight + 'px';
+    const anim = content.animate(
+        { height: opening ? ['0px', full] : [full, '0px'], opacity: opening ? [0, 1] : [1, 0] },
+        { duration: 200, easing: 'ease-out' }
+    );
+    anim.onfinish = () => { if (!opening) details.open = false; };
+}
+
 function renderRecipe(file) {
     const recipe = recipes.find(r => r.file === file);
     const view = document.getElementById('recipe-view');
@@ -106,6 +157,8 @@ function renderRecipe(file) {
         const body = el('div', 'recipe-body');
         body.innerHTML = marked.parse(recipe.body.replace(/^\s*# .*\n/, ''));
         body.querySelectorAll('img').forEach(img => img.src = resolvePath(img.getAttribute('src')));
+        const sections = makeSectionsCollapsible(body);
+        if (sections.length) view.appendChild(jumpLinks(sections));
         view.appendChild(body);
     }
 

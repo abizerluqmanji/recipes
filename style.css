@@ -176,6 +176,82 @@ main {
     margin: 2rem 0 0.75rem;
 }
 
+.jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+    margin-top: 1rem;
+}
+
+.jump-link {
+    font: inherit;
+    padding: 0 0 2px;
+    border: none;
+    background: none;
+    color: var(--accent);
+    cursor: pointer;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 1px;
+    transition: background-size 0.2s ease-out;
+}
+
+.jump-link:hover,
+.jump-link:focus-visible {
+    background-size: 100% 1px;
+}
+
+.recipe-body details {
+    scroll-margin-top: 1rem;
+}
+
+.recipe-body summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem 0 0.75rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.recipe-body summary::-webkit-details-marker {
+    display: none;
+}
+
+.recipe-body summary::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    flex: none;
+    /* Nudge so the chevron's visual centre sits on the text's centre */
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease-out;
+}
+
+.recipe-body details.collapsed > summary::before,
+.recipe-body details:not([open]) > summary::before {
+    transform: translateX(-2px) rotate(-45deg);
+}
+
+.section-content {
+    overflow: hidden;
+}
+
+.recipe-body summary h2 {
+    margin: 0;
+    color: var(--accent);
+    transition: text-shadow 0.2s ease-out;
+}
+
+.recipe-body summary:hover h2 {
+    text-shadow: 0 0 12px var(--accent-glow), 0 0 24px var(--accent-glow);
+}
+
 .recipe-body ul,
 .recipe-body ol {
     padding-left: 1.5rem;
