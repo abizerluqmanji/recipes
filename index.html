@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Ez Recipes</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
 </head>
 
 <body>
     <header>
-        <h1>Ez Recipes</h1>
+        <h1><a href="#" class="home-link">Ez Recipes</a></h1>
     </header>
     <main>
-        <div class="recipe-list">
-            <div id="recipes"></div>
-        </div>
-        <div id="content">
-            <em>Select a recipe from the list.</em>
-        </div>
+        <section id="list-view">
+            <ul id="recipe-list"></ul>
+        </section>
+        <article id="recipe-view" hidden></article>
     </main>
     <footer>
         <p>
@@ -28,11 +26,11 @@
             <a href="https://www.github.com/abizerluqmanji/recipes" class="icon-link" target="_blank" rel="noreferrer"
                 title="Source">
                 <img
-                    src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg">
+                    src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" alt="GitHub">
             </a>
         </p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
     <script src="script.js"></script>
 </body>
