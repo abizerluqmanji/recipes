@@ -35,6 +35,7 @@ async function loadIndex() {
             file,
             body,
             title: meta.title || generateRecipeTitle(file),
+            author: meta.author,
             image: meta.image ? resolvePath(meta.image) : null,
             time: meta.time,
             servings: meta.servings,
@@ -151,12 +152,18 @@ function renderRecipe(file) {
             view.appendChild(hero);
         }
         view.appendChild(el('h1', 'recipe-title', recipe.title));
+        if (recipe.author) view.appendChild(el('p', 'recipe-author', 'by ' + recipe.author));
         const meta = metaLine(recipe);
         if (meta) view.appendChild(el('div', 'recipe-meta meta', meta));
         // Title is shown above, so drop the markdown's leading H1
         const body = el('div', 'recipe-body');
         body.innerHTML = marked.parse(recipe.body.replace(/^\s*# .*\n/, ''));
         body.querySelectorAll('img').forEach(img => img.src = resolvePath(img.getAttribute('src')));
+        // Intro text before the first section goes above the divider
+        const description = el('div', 'recipe-description');
+        while (body.firstChild && body.firstChild.nodeName !== 'H2') description.appendChild(body.firstChild);
+        if (description.textContent.trim()) view.appendChild(description);
+        view.appendChild(el('hr', 'divider'));
         const sections = makeSectionsCollapsible(body);
         if (sections.length) view.appendChild(jumpLinks(sections));
         view.appendChild(body);

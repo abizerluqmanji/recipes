@@ -1,13 +1,12 @@
 ---
 title: <your-recipe-name>
+author: <your-name>
 image: images/<your-recipe-name>.jpg   # optional, relative to recipes/
 time: <total> min
 servings: <x>
 ---
 
 # <your-recipe-name>
-
-**Author**: <your-name>
 
 <your-recipe-description>  
 x servings, y minute prep time, z minute cook time.
