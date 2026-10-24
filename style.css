@@ -1,71 +1,315 @@
+:root {
+    --bg: #0f1115;
+    --surface: #141c18;
+    --surface-2: #1a2620;
+    --border: #26342d;
+    --text: #f0f6fc;
+    --muted: #8b949e;
+    --accent: #52b788;
+    --accent-2: #95d5b2;
+    --accent-glow: rgba(82, 183, 136, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Source Sans Pro", "Source Sans Pro Fallback";
+    font-family: "Source Sans 3", system-ui, sans-serif;
     margin: 0;
-    padding: 0;
-    background: #0d1117;
-    color: #f0f6fc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
     font-size: 18px;
     line-height: 1.6;
 }
 
+/* Corner glows, fixed to the screen */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 90% 60% at 0% 0%, rgba(82, 183, 136, 0.12), transparent 70%),
+        radial-gradient(ellipse 90% 60% at 100% 100%, rgba(82, 183, 136, 0.12), transparent 70%);
+}
+
+a {
+    color: var(--accent);
+}
+
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    padding: 2.5rem 16px 1.5rem;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+header h1 {
+    font-size: 2.6rem;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+.home-link {
+    color: var(--text);
+    text-decoration: none;
 }
 
 main {
+    flex: 1;
+    width: 100%;
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 0 auto;
+    padding: 1.5rem 16px 3rem;
 }
 
-.recipe-list {
+[hidden] {
+    display: none !important;
+}
+
+/* Recipe list */
+#recipe-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
 }
 
-#recipes {
+.recipe-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--surface-2), var(--surface));
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(82, 183, 136, 0.08);
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.recipe-row:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.recipe-row .thumb.placeholder {
+    background: linear-gradient(135deg, rgba(82, 183, 136, 0.25), rgba(82, 183, 136, 0.05));
+    border-color: rgba(82, 183, 136, 0.3);
+    color: var(--accent-2);
+}
+
+.thumb {
+    flex: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.thumb.placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Recipe view */
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.15s;
+}
+
+.back-link:hover {
+    color: var(--text);
+}
+
+.hero {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.recipe-title {
+    color: var(--accent);
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+}
+
+.recipe-author {
+    margin: -0.25rem 0 0.25rem;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.recipe-meta {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
+}
+
+.recipe-description p {
+    margin: 1rem 0 0;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1rem 0 0;
+}
+
+.recipe-body h2 {
+    font-size: 1.4rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.jump-links {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 1.75rem;
+    margin-top: 1rem;
 }
 
-a.recipe {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #f0f6fc;
-    text-decoration: none;
-    color: #f0f6fc;
-    border-radius: 4px;
-    white-space: nowrap;
+.jump-link {
+    font: inherit;
+    padding: 0 0 2px;
+    border: none;
+    background: none;
+    color: var(--accent);
+    cursor: pointer;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 1px;
+    transition: background-size 0.2s ease-out;
 }
 
-a.recipe:hover {
-    transform: scale(1.1);
+.jump-link:hover,
+.jump-link:focus-visible {
+    background-size: 100% 1px;
+}
+
+.recipe-body details {
+    scroll-margin-top: 1rem;
+}
+
+.recipe-body summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem 0 0.75rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.recipe-body summary::-webkit-details-marker {
+    display: none;
+}
+
+.recipe-body summary::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    flex: none;
+    /* Nudge so the chevron's visual centre sits on the text's centre */
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease-out;
+}
+
+.recipe-body details.collapsed > summary::before,
+.recipe-body details:not([open]) > summary::before {
+    transform: translateX(-2px) rotate(-45deg);
+}
+
+.section-content {
+    overflow: hidden;
+}
+
+.recipe-body summary h2 {
+    margin: 0;
+    color: var(--accent);
+    transition: text-shadow 0.2s ease-out;
+}
+
+.recipe-body summary:hover h2 {
+    text-shadow: 0 0 12px var(--accent-glow), 0 0 24px var(--accent-glow);
+}
+
+.recipe-body ul,
+.recipe-body ol {
+    padding-left: 1.5rem;
+}
+
+.recipe-body ul li,
+.recipe-body ol li {
+    margin-bottom: 0.5rem;
+    padding-left: 6px;
+}
+
+.recipe-body ul li::marker,
+.recipe-body ol li::marker {
+    color: var(--accent);
+}
+
+.recipe-body img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--muted);
+    padding-bottom: 1rem;
 }
 
 .icon-link {
     margin-left: 0.5rem;
     vertical-align: middle;
+    display: inline-flex;
+    margin-top: -2px;
 }
 
 .icon-link img {
     width: 18px;
     height: 18px;
-}
-
-footer {
-    text-align: center;
-    font-size: 1rem;
 }
