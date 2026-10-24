@@ -1,3 +1,10 @@
+---
+title: Shrimp Gravy
+image:
+time: 35 min
+servings: 5
+---
+
 # Shrimp Gravy
 
 **Author**: Anila

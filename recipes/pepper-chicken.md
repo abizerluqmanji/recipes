@@ -1,3 +1,10 @@
+---
+title: Pepper Chicken
+image:
+time: 35 min
+servings: 5
+---
+
 # Pepper Chicken
 
 **Author**: Anila

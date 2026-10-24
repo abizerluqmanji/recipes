@@ -1,3 +1,10 @@
+---
+title: <your-recipe-name>
+image: images/<your-recipe-name>.jpg   # optional, relative to recipes/
+time: <total> min
+servings: <x>
+---
+
 # <your-recipe-name>
 
 **Author**: <your-name>

@@ -1,3 +1,10 @@
+---
+title: Cubed Chicken
+image:
+time: 30 min
+servings: 2-4
+---
+
 # Cubed Chicken
 
 **Author**: Abizer
